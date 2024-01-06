@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Enter your Date of Birth</h1>
+    <form action="" id="dateForm" onsubmit="toShowdob(); return false">
+        <select name="" id="forDay">
+            <option value="0">Day</option>
+        </select>
+        <select name="" id="forMonth">
+            <option value="0">Month</option>
+        </select>
+        <select name="" id="forYear">
+            <option value="0">Year</option>
+        </select>
+        <button id="showDob">submit</button>
+    </form>
+    <hr>
+    <h1>Your Date OF Birth:-</h1>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var forDay = document.getElementById("forDay");
+            for (var i = 1; i <= 31; i++) {
+                var option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                forDay.appendChild(option);
+            }
+        });
+        function toShowday() {
+            var Day = document.getElementById("forDay");
+            var value = Day.value;
+            return value;
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var forMonth = document.getElementById("forMonth");
+            for (var i = 1; i <= 12; i++) {
+                var option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                forMonth.appendChild(option);
+            }
+        });
+        function toShowmonth() {
+            var Month = document.getElementById("forMonth");
+            var value = Month.value;
+            return value;
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var forYear = document.getElementById("forYear");
+            for (var i = 1990; i <= 2023; i++) {
+                var option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                forYear.appendChild(option);
+            }
+        });
+        function toShowyear() {
+            var Year = document.getElementById("forYear");
+            var value = Year.value;
+            return value;
+        }
+        function toShowdob() {
+            var DOB = document.createElement("div");
+            document.body.appendChild(DOB);
+            var SHOW = toShowday() + "/" + toShowmonth() + "/" + toShowyear();
+            DOB.innerHTML = SHOW;
+        }
+    </script>
+</body>
+</html>
